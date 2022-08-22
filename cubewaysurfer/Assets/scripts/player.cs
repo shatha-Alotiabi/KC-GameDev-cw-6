@@ -41,16 +41,20 @@ public class player : MonoBehaviour
         {
             //Restart
            Invoke("Restart", 1f);
+
             //play audio
             PlayAudio();
         }
+
     }
     void Restart()
     {
         SceneManager.LoadScene(0);
+
     }
     void PlayAudio()
     {
         audio.Play();
     }
+
 }

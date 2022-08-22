@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        
     }
 
     // Update is called once per frame
@@ -19,4 +20,13 @@ public class Enemy : MonoBehaviour
     {
         rb.velocity = new Vector3(0f, 0f, speed);
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Destroy(gameObject);
+
+        collision.gameObject.GetComponent<AudioSource>().Play();
+
+    }
+
 }
